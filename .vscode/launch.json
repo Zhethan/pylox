@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lox: Debug Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/lox.py", // Path to lox.py
+            "console": "integratedTerminal",
+            "args": [],
+            "justMyCode": false
+        },
+        {
+            "name": "Lox: Run Specific Script",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/lox.py",
+            "args": [
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Pytest suite",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${workspaceFolder}/tests"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Pytest current file",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
