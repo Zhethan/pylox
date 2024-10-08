@@ -1,0 +1,34 @@
+{
+  "name": "Pylox",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  // "runArgs": ["--env-file", ".env"],
+  // Features to install
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    }
+  },
+  // Mount the project folder
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  // VS Code settings (optional)
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "editor.formatOnSave": true, // Enable format on save
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": true // Ruff will handle auto-fixes
+    }
+  },
+  // Extensions to install in the container
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "matangover.mypy",
+    "charliermarsh.ruff", // Ruff extension for VS Code
+  ],
+  // Post-create command
+  "postCreateCommand": "pip install -r requirements.txt"
+}
