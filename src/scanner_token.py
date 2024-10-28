@@ -10,4 +10,3 @@ class Token:
 
     def __str__(self):
         return f"{self.token_type} {self.lexeme} {self.literal}"
- # type: ignore

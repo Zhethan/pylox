@@ -22,16 +22,20 @@
     "python.pythonPath": "/usr/local/bin/python",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "python.defaultInterpreterPath": "/usr/local/bin/python",
-    "editor.formatOnSave": true, // Enable format on save
-    "editor.codeActionsOnSave": {
-      "source.fixAll.ruff": true // Ruff will handle auto-fixes
-    }
+    "[python]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll.ruff": true,
+      }
+    },
+    "ruff.lint.run": "onSave", // Run Ruff on save
   },
   // Extensions to install in the container
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
-    "matangover.mypy",
     "charliermarsh.ruff", // Ruff extension for VS Code
   ],
   // Post-create command
